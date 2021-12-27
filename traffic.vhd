@@ -1,0 +1,170 @@
+-- Copyright (C) 1991-2012 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+
+-- PROGRAM		"Quartus II 32-bit"
+-- VERSION		"Version 12.1 Build 177 11/07/2012 SJ Full Version"
+-- CREATED		"Sun Sep 13 18:24:00 2020"
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+
+LIBRARY work;
+
+ENTITY traffic IS 
+	PORT
+	(
+		clock :  IN  STD_LOGIC;
+		reset :  IN  STD_LOGIC;
+		F :  OUT  STD_LOGIC;
+		H :  OUT  STD_LOGIC;
+		I :  OUT  STD_LOGIC;
+		J :  OUT  STD_LOGIC;
+		K :  OUT  STD_LOGIC;
+		G :  OUT  STD_LOGIC
+	);
+END traffic;
+
+ARCHITECTURE bdf_type OF traffic IS 
+
+COMPONENT lpm_counter0
+	PORT(clock : IN STD_LOGIC;
+		 aclr : IN STD_LOGIC;
+		 q : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+	);
+END COMPONENT;
+
+SIGNAL	q :  STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_0 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_1 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_2 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_3 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_25 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_26 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_10 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_27 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_13 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_14 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_15 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_16 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_17 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_18 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_19 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_20 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_21 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_22 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_23 :  STD_LOGIC;
+SIGNAL	SYNTHESIZED_WIRE_24 :  STD_LOGIC;
+
+
+BEGIN 
+
+
+
+SYNTHESIZED_WIRE_14 <= SYNTHESIZED_WIRE_0 AND SYNTHESIZED_WIRE_1 AND SYNTHESIZED_WIRE_2;
+
+
+I <= SYNTHESIZED_WIRE_3 OR q(0);
+
+
+SYNTHESIZED_WIRE_22 <= NOT(q(1));
+
+
+
+SYNTHESIZED_WIRE_23 <= NOT(q(2));
+
+
+
+SYNTHESIZED_WIRE_24 <= NOT(q(3));
+
+
+
+SYNTHESIZED_WIRE_17 <= SYNTHESIZED_WIRE_25 AND SYNTHESIZED_WIRE_26 AND q(3);
+
+
+SYNTHESIZED_WIRE_15 <= SYNTHESIZED_WIRE_25 AND SYNTHESIZED_WIRE_26 AND q(2);
+
+
+SYNTHESIZED_WIRE_16 <= SYNTHESIZED_WIRE_25 AND SYNTHESIZED_WIRE_26 AND SYNTHESIZED_WIRE_10;
+
+
+SYNTHESIZED_WIRE_20 <= q(0) AND SYNTHESIZED_WIRE_27 AND q(3);
+
+
+SYNTHESIZED_WIRE_18 <= q(0) AND SYNTHESIZED_WIRE_27 AND q(2);
+
+
+SYNTHESIZED_WIRE_19 <= q(0) AND q(1) AND SYNTHESIZED_WIRE_13;
+
+
+F <= SYNTHESIZED_WIRE_14 OR q(0);
+
+
+b2v_inst20 : lpm_counter0
+PORT MAP(clock => clock,
+		 aclr => reset,
+		 q => q);
+
+
+H <= SYNTHESIZED_WIRE_15 OR SYNTHESIZED_WIRE_16 OR SYNTHESIZED_WIRE_17;
+
+
+K <= SYNTHESIZED_WIRE_18 OR SYNTHESIZED_WIRE_19 OR SYNTHESIZED_WIRE_20;
+
+
+SYNTHESIZED_WIRE_25 <= NOT(q(0));
+
+
+
+SYNTHESIZED_WIRE_10 <= NOT(q(2));
+
+
+
+SYNTHESIZED_WIRE_26 <= NOT(q(1));
+
+
+
+SYNTHESIZED_WIRE_27 <= NOT(q(1));
+
+
+
+SYNTHESIZED_WIRE_13 <= NOT(q(2));
+
+
+
+SYNTHESIZED_WIRE_0 <= NOT(q(1));
+
+
+
+SYNTHESIZED_WIRE_1 <= NOT(q(2));
+
+
+
+SYNTHESIZED_WIRE_2 <= NOT(q(3));
+
+
+
+G <= NOT(SYNTHESIZED_WIRE_21 AND q(1) AND q(2));
+
+
+SYNTHESIZED_WIRE_21 <= NOT(q(0));
+
+
+
+J <= q(0) AND q(1) AND q(2);
+
+
+SYNTHESIZED_WIRE_3 <= SYNTHESIZED_WIRE_22 AND SYNTHESIZED_WIRE_23 AND SYNTHESIZED_WIRE_24;
+
+
+END bdf_type;
